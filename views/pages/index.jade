@@ -5,10 +5,11 @@ block content
     .row
       each item in movies
         .col-md-2
-          .thumbnail
-            a(href='/movie/#{item._id}')
-              img(src='#{item.img}')
+          h2=item.name
+          //.thumbnail
+            a(href='/movie/#{item.name}')
+              img(src='#{item.name}')
           .caption
-            h3 #{item.title}
+            h3 age:#{item.age}
             p: a.btn.btn-primary(href='/',role='button') 呵呵呵
 

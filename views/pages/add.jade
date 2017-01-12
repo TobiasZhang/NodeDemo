@@ -1,0 +1,18 @@
+//
+   Created by TT on 2017/1/12.
+extends ../layout
+block content
+  .container
+    .row
+      form.form-horizontal(method='post', action='/users/add')
+        .form-group
+          label.col-sm-2.control-label(for='inputTitle') 电影名字
+          .col-sm-10
+            input#inputTitle.form-control(name='movie[name]',value='#{movie.name}')
+        .form-group
+          label.col-sm-2.control-label(for='age') 年龄
+          .col-sm-10
+            input#age.form-control(name='movie[age]',value='#{movie.age}')
+        .form-group
+          .col-sm-offset-2.col-sm-10
+            button.btn.btn-default(type='submit') 添加

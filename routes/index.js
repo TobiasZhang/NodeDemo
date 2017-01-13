@@ -25,7 +25,7 @@ router.preparedSocketIO = function (server) {
     });
     //自定义事件
     socket.on('customclick', function(data) {
-      socket.emit('autoreply',{msg:'你才'+data.msg})
+      socket.emit('autoreply',{msg:'你才是'+data.msg})
       console.log(socket.remoteAddress+'--customclick--:'+data.msg)
     });
   })

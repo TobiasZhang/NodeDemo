@@ -14,26 +14,15 @@ router.preparedSocketIO = function (server) {
     console.log('新连接connect: ' +
       socket.remoteAddress + ':' + socket.remotePort);
     //socket.setEncoding('binary');
-
-    //接收到数据
-    socket.on('data', function(data) {
-      console.log(socket.remoteAddress+'说:'+data.toString())
-    });
-    //接收到数据2
-    socket.on('text', function(data) {
-      console.log(socket.remoteAddress+'说txt:'+data.toString())
-    });
+      socket.on('disconnect', function(){
+        console.log('---客户端断开连接---');
+      });
     //数据错误事件
     socket.on('error',function(exception){
       console.log('---客户端异常断开---')
       console.log('socket error:' + exception);
       socket.end();
     });
-    //客户端关闭事件
-    socket.on('close',function(data){
-      console.log('close: ' +
-        socket.remoteAddress + ' ' + socket.remotePort);
-    })
     //自定义事件
     socket.on('customclick', function(data) {
       socket.emit('autoreply',{msg:'你才'+data.msg})

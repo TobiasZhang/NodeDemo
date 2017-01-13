@@ -18,6 +18,7 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
+//extended为true 表单参数封装 多层 json
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 //设置静态资源 express.static

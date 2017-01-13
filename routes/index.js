@@ -3,7 +3,7 @@ var router = express.Router();
 
 var mongoose = require('mongoose');
 var Movie = require('../models/movie')
-
+//连接mongodb数据库,port不加默认27017，整个应用只调用一次连接
 mongoose.connect('mongodb://localhost/hehe');
 
 /* GET home page. */

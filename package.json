@@ -1,6 +1,6 @@
 {
   "name": "nodedemo",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
@@ -12,10 +12,27 @@
     "express": "~4.14.0",
     "jade": "~1.11.0",
     "moment": "^2.17.1",
-    "mongoose": "latest",
+    "mongoose": "^4.7.6",
     "morgan": "~1.7.0",
+    "mysql": "^2.12.0",
     "serve-favicon": "~2.3.0",
     "socket.io": "^1.7.2",
-    "underscore": "latest"
-  }
+    "underscore": "^1.8.3"
+  },
+  "description": "nono",
+  "main": "/bin/www",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TobiasZhang/NodeDemo.git"
+  },
+  "keywords": [
+    "nodedemo"
+  ],
+  "author": "tt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TobiasZhang/NodeDemo/issues"
+  },
+  "homepage": "https://github.com/TobiasZhang/NodeDemo#readme"
 }

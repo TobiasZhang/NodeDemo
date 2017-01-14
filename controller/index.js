@@ -26,6 +26,9 @@ router.preparedSocketIO = function (server) {
     });
     //自定义事件
     socket.on('customclick', function(data) {
+      if(typeof data === 'string'){//socket.io android client 对Gson不支持，只能传递String
+        data = JSON.parse(data);
+      }
       socket.emit('autoreply',{msg:'你才是'+data.msg})
       console.log(socket.remoteAddress+'--customclick--:'+data.msg)
     });

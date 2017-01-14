@@ -1,0 +1,25 @@
+{
+  "name": "nodedemo",
+  "description": "none",
+  "main": "",
+  "authors": [
+    "TobiasZhang <tobiasz2012@sina.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "nodedemo"
+  ],
+  "homepage": "https://github.com/TobiasZhang/NodeDemo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

@@ -8,7 +8,7 @@ $(function () {
     let zone = $('#zone'+id);
     $.ajax({
       type:'delete',
-      url:'/users?id'+id,
+      url:'/users?id='+id,
 
     }).done(function(results){
       if(results.success==1){

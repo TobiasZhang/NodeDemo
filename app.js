@@ -5,8 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+
 
 var app = express();
 
@@ -25,10 +24,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //格式化时间
 app.locals.moment = require('moment');
+//分发路由
+require('./routes/routes')(app);
 
-app.use('/', index);
-app.use('/users', users);
-
+//init websocket.io
+var index = require('./controller/index');
 app.ready = function(server){
   index.preparedSocketIO(server);
 }

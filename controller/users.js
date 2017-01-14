@@ -82,7 +82,7 @@ router.get('/query', function(req, res, next) {
 //path:/users/:id 路径上的参数通过 req.params.id取得
 //删
 router.delete('/', function(req, res, next) {
-  let id = req.query.id;
+  let id = req.query.id;//获得?id=value参数
   if(id)
     Movie.remove({_id:id},function(err){
       if(err)

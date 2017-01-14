@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var io = require('socket.io');
 
+//操作mongodb的模块
 var mongoose = require('mongoose');
 var Movie = require('../models/movie')
 //连接mongodb数据库,port不加默认27017，整个应用只调用一次连接
@@ -32,15 +33,18 @@ router.preparedSocketIO = function (server) {
 }
 
 /* GET home page. */
-router.get('/index', function(req, res, next) {
+router.get('/', function(req, res, next) {
   Movie.findAll(function(err,movies){
     if(err){
       console.log(err);
     }
+    movies.forEach(item => console.log(JSON.stringify(item)));
     res.render('index', { title: 'Express',movies:movies });
   });
   //res.render('index', { title: 'Express',movies:[{_id:1,title:'大片1',img:'/images/test01.jpg'},{_id:333,title:'大片2',img:'/images/test02.jpg'},] });
 });
+
+
 router.get('/chat', function(req, res, next) {
   res.render('hehe');
 });

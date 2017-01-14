@@ -4,12 +4,13 @@ block content
   .container
     .row
       each item in movies
-        .col-md-2
+        .col-md-2(id='zone#{item._id}')
           h2=item.name
           //.thumbnail
             a(href='/movie/#{item.name}')
               img(src='#{item.name}')
           .caption
             h3 age:#{item.age}
-            p: a.btn.btn-primary(href='/',role='button') 呵呵呵
-
+            h3 更新啊时间:#{moment(item.meta.updateAt).format('YYYY-MM-DD')}
+            p: a.del.btn.btn-danger(role='button' data-shanchu='#{item._id}') 删除
+  script(src='/javascripts/shanchu.js')

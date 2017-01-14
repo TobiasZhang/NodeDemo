@@ -14,5 +14,9 @@ block content
           .col-sm-10
             input#age.form-control(name='movie[age]',value='#{movie.age}')
         .form-group
+          label.col-sm-2.control-label(for='age') 国家
+          .col-sm-10
+            input#country.form-control(name='country',value='#{country}')
+        .form-group
           .col-sm-offset-2.col-sm-10
             button.btn.btn-default(type='submit') 添加

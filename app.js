@@ -22,8 +22,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 //设置静态资源 express.static
-app.use(express.static(path.join(__dirname,'bower_components')));
 app.use(express.static(path.join(__dirname, 'public')));
+//格式化时间
+app.locals.moment = require('moment');
 
 app.use('/', index);
 app.use('/users', users);
